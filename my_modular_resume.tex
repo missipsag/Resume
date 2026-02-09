@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc} % For handling special characters
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}    % For icons
+\usepackage{enumitem}       % For list formatting
+\usepackage{xcolor}         % For colors
+\usepackage[margin=0.5in]{geometry} % Set margins ONCE (0.5in is standard)
+\usepackage{hyperref}       % For links and outlines
+
+% --- STYLING ---
+\pagestyle{empty}           % No page numbers
+\setlength\parindent{0pt}   % No indentation for paragraphs
+\raggedbottom               % Allow flexible bottom margins
+\raggedright
+\setlist{nosep}
+% \pagestyle{empty}
+% \setlength\parindent{9pt}
+
+% \renewcommand\labelitemi{--}
+% --- COLORS ---
+\definecolor{highlight}{RGB}{0,0,0} % Currently Black. Change values for color.
+
+% --- CUSTOM COMMANDS ---
+
+% 1. NAME HEADER
+\newcommand{\name}[1]{
+    \begin{center}
+        \section*{\LARGE \color{highlight} #1}
+        \vspace{-0.8cm}
+    \end{center}
+}
+
+% 2. CONTACT INFO WRAPPER
+\newcommand{\topinfo}[1]{
+    \begin{center}
+        \vspace{-0.1cm}#1\vspace{-0.3cm}
+    \end{center}
+}
+
+% 3. SECTION HEADINGS (WITH OUTLINE FIX)
+\newcommand{\resumesection}[1]{
+    \phantomsection % 1. Creates a hidden anchor link so clicking the outline works
+    \addcontentsline{toc}{section}{#1} % 2. Manually adds this text to the Outline/TOC
+    \vspace{-0.5cm}
+    \section*{
+        \color{highlight}#1
+    }
+    \vspace{-0.2cm}
+    \hrule
+    \vspace{0.1cm}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% --- Tight & Elegant Spacing Commands ---
+
+% 1. Space between a Section (EXPERIENCE) and the first Job Title
+% Using 3pt keeps it close enough to feel like a heading for the content.
+\newcommand{\spaceSectionContent}{\vspace{3pt}}
+
+% 2. Space between a Job Title and the bullet points below it
+% Using 1pt or even 0pt keeps the "description" attached to the "title".
+\newcommand{\spaceHeaderSubheader}{\vspace{1pt}}
+
+% 3. Space between the end of one job's bullets and the start of the next Job Title
+% 6pt is roughly half a line of text—just enough to signal a reset.
+\newcommand{\spaceEntryEntry}{\vspace{6pt}}
+
+% 4. Space between major sections (e.g., Experience and Education)
+% 10pt provides a clear visual break without wasting room.
+\newcommand{\spaceSectionSection}{\vspace{10pt}}
+
+
+% Adjust margins
+% \addtolength{\oddsidemargin}{-0.15in}
+%  \addtolength{\textwidth}{0.3in}
+
+
+% \setlength{\tabcolsep}{0in}
+
+% --- PDF SETUP ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdfnewwindow=true,
+    bookmarks=true,         % Show the bookmarks bar?
+    bookmarksopen=true,     % Open the bookmarks tree by default?
+    pdftitle={Missipsa Ghernaout - Resume}, % Metadata title
+    pdfauthor={Missipsa Ghernaout}          % Metadata author
+}
+
+
+
+\begin{document}
+
+    \begin{center}
+        \name{Missipsa GHERNAOUT} 
+        \vspace{5mm}
+        \spaceSectionContent
+        \topinfo{\small{ \faMapMarker\ N°121 Ouzaid et Frères, Tigzirt, 15019, Tizi-Ouzou, Algeria.}}
+        \topinfo{
+            \faPhone\ +213 6 74 57 65 56 \quad
+            \href{mailto:ghernaoutmissipsa.pro@gmail.com}{\faEnvelope\ ghernaoutmissipsa.pro@gmail.com} \quad
+            \href{https://github.com/missipsag}{\faGithub\ missipsag} \quad
+            \href{https://www.linkedin.com/in/missipsa-ghernaout}{\faLinkedin\ missipsa-ghernaout}%
+        }
+    \end{center}  
+    \spaceSectionSection
+    \resumesection{Education}
+    \spaceSectionContent
+    
+        \textbf{Computer Science, Master's Degree in Intelligent Computer Systems \hfill Sep 2025 -- Jun 2027 (Expected)} \par
+        \textit{\small{Mouloud Mammeri University \hfill Tizi-Ouzou, Algeria}} \par
+        \spaceHeaderSubheader
+        \textbf{Coursework:} Advanced Algorithms and Complexity,  Intelligent Networks, Cybersecurity, Big Data, NLP, Advanced Databases, Systems Programming,
+        Problem Solving, Deep Learning and Neural Networks, Data Mining.\par
+        
+        \spaceEntryEntry
+        
+        \textbf {Computer Science, Bachelor's Degree in Computer Systems \hfill Sep 2022 -- Jun 2025}\par
+        \textit{\small {Mouloud Mammeri University \hfill Tizi-Ouzou, Algeria}} \par
+        \spaceHeaderSubheader
+        \textbf{Coursework:} Algorithms and Data Structures, Artificial Intelligence, Discrete Math, Algebra, Statistics/Probability,\par Networks, Databases, Compiler Design, Operating Systems, Computer Security, Software Engineering.\par
+    
+    \spaceSectionSection
+    \resumesection{Projects}
+    \spaceSectionContent
+    
+    
+        \textbf{Unitime }\textbar{} \textit{\href{https://github.com/missipsag/Unitime}{\small{Frontend Source Code}}} \textbar{} \textit{\href{https://github.com/missipsag/Unitime-backend}{\small{Backend Source Code}}} \hfill \textbf{Flutter \textbar{} Spring Boot \textbar{} PostgreSQL} \par
+        
+        \begin{itemize}[label=\textbullet]
+        	\item Architected a cross-platform solution using \textbf{Flutter (MVVM)} and \textbf{Spring Boot 3 (Clean Architecture)}, ensuring a strict separation of concerns and high system maintainability.
+            \item Implemented advanced design patterns including \textbf{Command} for reactive state tracking, \textbf{Result Union} for type-safe error handling.
+            \item Optimized data integrity and performance through \textbf{DTOs} and a \textbf{normalized PostgreSQL schema}, secured by \textbf{role-based JWT authentication} and platform-specific secure storage.
+            
+        	
+        \end{itemize} \par
+        
+        \spaceEntryEntry
+        
+        %% Digit regonition project 
+        \textbf{Handwritten Digit Recognition }\textbar{} \textit{\href{https://github.com/missipsag/Digit-recognition01}{\small{Source Code}}} \hfill \textbf{Python \textbar{} Scikit-learn \textbar{} NumPy \textbar{} Tkinter} \par
+        
+        \begin{itemize}[label=\textbullet]
+        	\item Engineered an end-to-end ML pipeline using a \textbf{Support Vector Machine (SVM)} classifier and PIL/NumPy to process and recognize handwritten digits with \textbf{98\%} accuracy.
+            \item Developed an interactive Tkinter \textbf{GUI featuring real-time 8x8} pixel normalization and intelligent cropping, validating model robustness via macro-averaged performance metrics.
+            
+        \end{itemize} \par
+        
+        \spaceEntryEntry
+        
+        %% Lexic anlyser projet 
+        \textbf{Lexical Analyzer (Compiler Design) }\textbar{} \textit{\href{https://github.com/missipsag/LexiC-analyser}{\small{Source Code}}} \hfill \textbf{C} \par
+        
+        \begin{itemize}[label=\textbullet]
+        	\item Engineered a low-level scanner in C based on \textbf{Deterministic Finite Automata (DFA)} to efficiently tokenize source code and validate language syntax.
+            \item Optimized system performance through manual \textbf{memory management} and efficient buffer handling, ensuring high-speed string manipulation and robust syntax error detection.
+        \end{itemize} \par
+        
+        \spaceEntryEntry
+        
+        % %% Travel agency app projet 
+        % \textbf{Travel-Agency-App}\textbar{} \textit{\href{https://github.com/missipsag/Travel-Agency-App}{Source Code}} \hfill \textbf{ Python \textbar{} Tkinter \textbar{} MySQL} \par
+        
+        % \begin{itemize}[label=\textbullet]
+        % 	\item Developed a desktop administration suite using the \textbf{MVC architecture} to streamline the management of complex travel and client data.
+        %     \item Architected a \textbf{relational database schema} in MySQL, implementing advanced queries and triggers to ensure data persistence and referential integrity.
+        %     \item Designed a custom graphical user interface featuring multi-layered data views and automated reporting tools for optimized administrative workflow.Designed a custom graphical user interface featuring multi-layered data views and automated reporting tools for optimized administrative workflow.
+        % \end{itemize} \par
+        % \spaceEntryEntry
+        
+        %% Yelp-Camp projet 
+        \textbf{YelpCamp Platform }\textbar{} \textit{\href{https://github.com/missipsag/Yelp-Camp-Website}{\small{Source Code}}} \hfill \textbf{ Node.js \textbar{} Express.js \textbar{} MongoDB} \par
+        
+        \begin{itemize}[label=\textbullet]
+        	\item Engineered a \textbf{RESTful MVC platform} using Node.js and MongoDB, integrating \textbf{Cloudinary for cloud media storage} and \textbf{Passport.js} for secure, session-based authentication.
+            \item Implemented middleware-level security and flexible NoSQL data modeling to manage complex campground CRUD operations and user authorizations.
+        \end{itemize} 
+
+    \spaceSectionSection
+    \resumesection{Skills}
+    \spaceSectionContent
+    
+        \textbf{AI \& Data Science}: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Spark, Hadoop, HBase.
+        \par
+        \textbf{Software Development}: Flutter (Dart), JavaScript, Java, Spring Boot, C, Node.js, Express.js, PostgreSQL, MySQL, MongoDB. 
+        \par
+         \textbf{OS \& Tools}: Linux, Windows, Git, Postman.
+    
+    \spaceSectionSection
+    \resumesection{Languages}
+    \spaceSectionContent
+    
+        \textbullet{} \textbf{French:} \href{https://drive.google.com/file/d/1RjuiavVeiUFEa91Uh6k2WjoHg0r1EBHZ/view?usp=sharing}{C2 (TCF SO)} 
+        \textbullet{} \textbf{English:} \href{https://drive.google.com/file/d/1bxKdtjE45JaJ6NwpIdTSfgrJbPAn8mdc/view?usp=sharing}{C1 (EnglishScore)}  
+        \textbullet{} \textbf{Arabic:} Native
+        \textbullet{} \textbf{Tamazight:} Native
+        \textbullet{} \textbf{Italian:} Beginner
+    
+\end{document}
+
